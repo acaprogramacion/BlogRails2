@@ -1,0 +1,17 @@
+<%= form_tag create_comment_post_path do %>
+    <div class="field">
+      <%= label_tag "Nombre" %><br>
+      <%= text_field_tag :name, nil, class: 'form-control' %>
+    </div>
+
+    <div class="field">
+      <%= label_tag "Contenido" %><br>
+      <%= text_area_tag :content, nil, class: 'form-control' %>
+    </div>
+    <%= hidden_field_tag :post_id, @post.id %>
+
+    <div class="field">
+      <%= button_tag "Crear Comentario", class: 'btn' %>
+    </div>
+
+<% end %>

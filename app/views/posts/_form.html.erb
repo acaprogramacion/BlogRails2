@@ -1,0 +1,39 @@
+<%= form_for(@post) do |f| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+
+  <div class="field">
+    <%= f.label 'Titulo' %><br>
+    <%= f.text_field :title, class: 'form-control' %>
+  </div>
+  <div class="field">
+    <%= f.label :url %><br>
+    <%= f.text_field :url, class: 'form-control' %>
+  </div>
+  <div class="field">
+    <%= f.label "Categoría" %><br>
+    <%= f.select :category_ids, @list_categories.collect {|c| [c.name, c.id]}, {prompt: false}, {:multiple => true, class: 'form-control'} %>
+  </div>
+  <div class="field">
+    <%= f.label 'Publicada' %><br>
+    <%= f.check_box :status %>
+  </div>
+  <div class="field">
+    <%= f.label 'Contenido' %><br>
+    <%= f.text_area :content, class: 'form-control ckeditor' %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Crear', class: 'btn btn-danger' %>
+  </div>
+<% end %>

@@ -1,0 +1,29 @@
+<h1>Anuncios</h1>
+
+<table class="table table-default">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Imagen</th>
+      <th>Url</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ads.each do |ad| %>
+      <tr>
+        <td><%= ad.name %></td>
+        <td><%= image_tag ad.image, height: 100 %></td>
+        <td><%= ad.url %></td>
+        <td><%= link_to 'Ver', ad %></td>
+        <td><%= link_to 'Editar', edit_ad_path(ad) %></td>
+        <td><%= link_to 'Eliminar', ad, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Crear Anuncio', new_ad_path, class: 'btn btn-default' %>

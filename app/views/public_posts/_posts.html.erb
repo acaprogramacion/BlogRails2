@@ -1,0 +1,13 @@
+<% @posts.each do |p| %>
+
+    <div class="post">
+      <h2><b><%= p.title %></b> <small>/ <%= p.categories.collect { |x| x.name } %></small></h2>
+      <small><%= p.updated_at.to_formatted_s(:long) %> por <b><%= p.user.email %></b></small>
+      <hr/>
+      <div class="hide_content">
+        <%== p.content %>
+      </div>
+      <%= link_to 'Ver más', public_post_path(p.url), class: 'btn btn-default btn-md' %>
+    </div>
+
+<% end %>

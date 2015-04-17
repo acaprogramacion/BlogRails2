@@ -1,0 +1,33 @@
+<div class="post">
+    <h1><b><%= @post.title %></b> <small>/ <%= @post.categories.collect { |x| x.name }%></small></h1>
+    <small><%= @post.updated_at.to_formatted_s(:long) %> por <b><%= @post.user.email %></b></small>
+    <hr/>
+    <div class="contenido">
+        <%== @post.content %>
+    </div>
+</div>
+
+<div class="comments_block">
+  <h3>Comentarios</h3>
+
+  <div class="row">
+    <div class="col-md-12">
+  <% @all_comments.each do |c| %>
+      <blockquote>
+        <p><i><%= c.content %></i></p>
+        <footer><%= c.name %></footer>
+      </blockquote>
+  <% end %>
+    </div>
+
+    <hr/>
+
+    <div class="col-md-12 new_comment">
+      <h4><b>Crear Comentario</b></h4>
+      <%= render 'create_comment' %>
+    </div>
+  </div>
+
+
+
+</div>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  subject: MyText
+  meeting: 2015-02-22
+  status: false
+  user_id: 1
+
+two:
+  subject: MyText
+  meeting: 2015-02-22
+  status: false
+  user_id: 1

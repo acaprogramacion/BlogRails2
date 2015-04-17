@@ -1,0 +1,51 @@
+#menublog{
+  background-color: darkred;
+  color: white;
+  display: block;
+  margin-bottom: 0;
+  border-bottom: 0;
+  a{
+    color: #ffffff;
+  }
+  a:hover{
+    color: #ffff00;
+  }
+}
+
+#headerblog{
+  background: #080808;
+  padding: 40px 0;
+
+  h1{
+    color: orange;
+    font-weight: bold;
+    font-size: 70px;
+    letter-spacing: -2px;
+  }
+  h3{
+    font-family: Georgia, Helvetica, Arial, sans-serif; color: gainsboro;
+    margin-top: 0;
+  }
+}
+
+#body{
+  padding: 20px 0;
+}
+
+.well{
+  h3{
+    margin-top: 0;
+  }
+}
+
+.post{
+  margin-bottom: 20px;
+
+  .contenido{
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #cccccc;
+      font-size: 18px;
+      line-height: 1.4;
+  }
+
+}
