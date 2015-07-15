@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
-  before_action :categories_public, only: [:edit, :new]
+  before_action :categories_public, only: [:edit, :new, :create, :update]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
 
