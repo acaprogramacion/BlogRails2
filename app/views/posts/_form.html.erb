@@ -23,7 +23,8 @@
   </div>
   <div class="field">
     <%= f.label "Categoría" %><br>
-    <%= f.select :category_ids, @list_categories.collect {|c| [c.name, c.id]}, {include_blank: true}, {:multiple => true, class: 'form-control'} %>
+    <%#= f.select :category_ids, @list_categories.collect {|c| [c.name, c.id]}, {include_blank: true}, {:multiple => true, class: 'form-control'} %>
+    <%= f.collection_select :category_ids, @list_categories, :id, :name, {include_blank: true}, {disabled: lambda{|category| category.archived? } %>
   </div>
   <div class="field">
     <%= f.label 'Publicada' %><br>
